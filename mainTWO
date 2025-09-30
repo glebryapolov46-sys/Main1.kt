@@ -1,0 +1,22 @@
+fun main() {
+    print("Введите строку: ")
+    val input = readLine() ?: ""  // Считываем строку с клавиатуры
+    val counts = mutableMapOf<Char, Int>()
+
+    // Подсчитываем символы
+    for (char in input) {
+        if (counts.containsKey(char)) {
+            counts[char] = counts[char]!! + 1
+        } else {
+            counts[char] = 1
+        }
+    }
+
+    // Сортируем символы по алфавиту
+    val sortedKeys = counts.keys.sorted()
+
+    // Выводим результат
+    for (key in sortedKeys) {
+        println("$key - ${counts[key]}")
+    }
+}
