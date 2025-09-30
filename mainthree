@@ -1,0 +1,18 @@
+fun main() {
+    print("Введите натуральное число: ")
+    val number = readLine()!!.toInt()
+
+    var result = ""
+    var n = number
+
+    if (n == 0) {
+        result = "0"
+    } else {
+        while (n > 0) {
+            result = (n % 2).toString() + result  // Преобразуем в строку
+            n = n / 2
+        }
+    }
+
+    println("Двоичное представление: $result")
+}
