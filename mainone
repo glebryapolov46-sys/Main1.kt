@@ -1,0 +1,32 @@
+fun compress(input: String): String {
+    if (input.isEmpty()) return ""
+
+    var result = ""
+    var currentChar = input[0]
+    var count = 1
+
+    for (i in 1 until input.length) {
+        if (input[i] == currentChar) {
+            count++
+        } else {
+            result += currentChar
+            if (count > 1) {
+                result += count
+            }
+            currentChar = input[i]
+            count = 1
+        }
+    }
+
+    result += currentChar
+    if (count > 1) {
+        result += count
+    }
+
+    return result
+}
+
+fun main() {
+    val input = "AAADSSSRRTTHAAAA"
+    println(compress(input)) // Вывод: A3DS3R2T2HA4
+}
