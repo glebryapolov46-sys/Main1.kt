@@ -1,0 +1,21 @@
+fun main() {
+    print("Введите выражение (ЧИСЛО1 ЧИСЛО2 ОПЕРАЦИЯ): ")
+    val input = readLine()!!
+    val parts = input.split(" ")
+
+    val num1 = parts[0].toDouble()
+    val num2 = parts[1].toDouble()
+    val operation = parts[2]
+
+    var result = 0.0
+
+    when (operation) {
+        "+" -> result = num1 + num2
+        "-" -> result = num1 - num2
+        "*" -> result = num1 * num2
+        "/" -> result = num1 / num2
+        else -> println("Неизвестная операция")
+    }
+
+    println("Результат: $result")
+}
