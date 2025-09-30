@@ -1,0 +1,22 @@
+fun main() {
+    print("Введите первую цифру: ")
+    val digit1 = readLine()!!.toInt()
+
+    print("Введите вторую цифру: ")
+    val digit2 = readLine()!!.toInt()
+
+    var result = -1
+
+    // Проверяем, можно ли сделать нечетное число
+    if (digit1 % 2 != 0) {
+        result = digit1 * 10 + digit2
+    } else if (digit2 % 2 != 0) {
+        result = digit2 * 10 + digit1
+    }
+
+    if (result != -1) {
+        println(result)
+    } else {
+        println("Создать нечетное число невозможно")
+    }
+}
